@@ -502,3 +502,69 @@
   src: asset-url(font-path('SourceSansPro/SourceSansPro-Bold.ttf')) format('truetype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+@font-face {
+  font-family: "Vazir";
+  src: asset-url(font-path("Vazir/Vazir.eot"));
+  src: asset-url(font-path("Vazir/Vazir.eot?#iefix")) format("embedded-opentype"),
+    asset-url(font-path("Vazir/Vazir.woff2")) format("woff2"),
+    asset-url(font-path("Vazir/Vazir.woff")) format("woff"),
+    asset-url(font-path("Vazir/Vazir.ttf")) format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: asset-url(font-path("Vazir/Vazir-Bold.eot"));
+  src: asset-url(font-path("Vazir/Vazir-Bold.eot?#iefix")) format("embedded-opentype"),
+    asset-url(font-path("Vazir/Vazir-Bold.woff2")) format("woff2"),
+    asset-url(font-path("Vazir/Vazir-Bold.woff")) format("woff"),
+    asset-url(font-path("Vazir/Vazir-Bold.ttf")) format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: asset-url(font-path("Vazir/Vazir-Thin.eot"));
+  src: asset-url(font-path("Vazir/Vazir-Thin.eot?#iefix")) format("embedded-opentype"),
+    asset-url(font-path("Vazir/Vazir-Thin.woff2")) format("woff2"),
+    asset-url(font-path("Vazir/Vazir-Thin.woff")) format("woff"),
+    asset-url(font-path("Vazir/Vazir-Thin.ttf")) format("truetype");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: asset-url(font-path("Vazir/Vazir-Light.eot"));
+  src: asset-url(font-path("Vazir/Vazir-Light.eot?#iefix")) format("embedded-opentype"),
+    asset-url(font-path("Vazir/Vazir-Light.woff2")) format("woff2"),
+    asset-url(font-path("Vazir/Vazir-Light.woff")) format("woff"),
+    asset-url(font-path("Vazir/Vazir-Light.ttf")) format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: asset-url(font-path("Vazir/Vazir-Medium.eot"));
+  src: asset-url(font-path("Vazir/Vazir-Medium.eot?#iefix")) format("embedded-opentype"),
+    asset-url(font-path("Vazir/Vazir-Medium.woff2")) format("woff2"),
+    asset-url(font-path("Vazir/Vazir-Medium.woff")) format("woff"),
+    asset-url(font-path("Vazir/Vazir-Medium.ttf")) format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: asset-url(font-path("Vazir/Vazir-Black.eot"));
+  src: asset-url(font-path("Vazir/Vazir-Black.eot?#iefix")) format("embedded-opentype"),
+    asset-url(font-path("Vazir/Vazir-Black.woff2")) format("woff2"),
+    asset-url(font-path("Vazir/Vazir-Black.woff")) format("woff"),
+    asset-url(font-path("Vazir/Vazir-Black.ttf")) format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
