@@ -101,17 +101,18 @@ class ApplicationController < ActionController::Base
     locale = if user && user.language != 'default'
       user.language
     else
-      "fa_IR"
+      Rails.configuration.default_locale.presence || http_accept_language.language_region_compatible_from(I18n.available_locales)
     end
 
     begin
       I18n.locale = locale.tr('-', '_') unless locale.nil?
     rescue
-      # Default to Farsi if there are any issues in language
+      # Default to English if there are any issues in language
       logger.error("Support: User locale is not supported (#{locale}")
-      I18n.locale = "fa_IR"
+      I18n.locale = "fa"
     end
   end
+
 
   # Checks to make sure that the admin has changed his password from the default
   def check_admin_password
