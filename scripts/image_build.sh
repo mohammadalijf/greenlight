@@ -34,14 +34,14 @@ display_usage() {
 
 # if less than two arguments supplied, display usage
 if [ $# -le 0 ]; then
-	display_usage
-	exit 1
+  display_usage
+  exit 1
 fi
 
 # check whether user had supplied -h or --help . If yes display usage
-if [[ ($# == "--help") ||  $# == "-h" ]]; then
-	display_usage
-	exit 0
+if [[ ($# == "--help") || $# == "-h" ]]; then
+  display_usage
+  exit 0
 fi
 
 export CD_REF_SLUG=$1
@@ -50,7 +50,7 @@ if [ -z $CD_REF_NAME ]; then
   export CD_REF_NAME=$(git branch | grep \* | cut -d ' ' -f2)
 fi
 
-if [ "$CD_REF_NAME" != "master" ] && [[ "$CD_REF_NAME" != *"release"* ]] && [[ "$CD_REF_NAME" != *"alpha"* ]] && ( [ -z "$CD_BUILD_ALL" ] || [ "$CD_BUILD_ALL" != "true" ] ); then
+if [ "$CD_REF_NAME" != "master" ] && [[ "$CD_REF_NAME" != *"release"* ]] && [[ "$CD_REF_NAME" != *"alpha"* ]] && ([ -z "$CD_BUILD_ALL" ] || [ "$CD_BUILD_ALL" != "true" ]); then
   echo "#### Docker image for $CD_REF_SLUG:$CD_REF_NAME won't be built"
   exit 0
 fi
@@ -67,7 +67,7 @@ if [ -z $CD_DOCKER_REPO ]; then
   export CD_DOCKER_REPO=$CD_REF_SLUG
 fi
 echo "#### Docker image $CD_DOCKER_REPO:$CD_REF_NAME is being built"
-docker build --build-arg version_code="${CD_VERSION_CODE}" -t $CD_DOCKER_REPO:$CD_REF_NAME .
+docker build --network=bridge --build-arg version_code="${CD_VERSION_CODE}" -t $CD_DOCKER_REPO:$CD_REF_NAME .
 
 if [ -z "$CD_DOCKER_USERNAME" ] || [ -z "$CD_DOCKER_PASSWORD" ]; then
   echo "#### Docker image for $CD_DOCKER_REPO can't be published because CD_DOCKER_USERNAME or CD_DOCKER_PASSWORD are missing (Ignore this warning if running outside a CD/CI environment)"
